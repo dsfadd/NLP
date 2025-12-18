@@ -65,8 +65,8 @@ year_only_rule = INT.interpretation(EntryFact.birth_date)
 # родился 15 сентября 1945
 # родился в 1945
 BIRTH_DATE_RULE = or_(
-    full_date_rule,
-    rule('в',year_only_rule),
+    rule(full_date_rule,normalized('год').optional()),
+    rule('в',year_only_rule,normalized('год').optional()),
 )
 #endregion
 
