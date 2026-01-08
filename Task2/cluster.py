@@ -31,9 +31,9 @@ def doc2vec_kmeans(model:FastText,sentences:list[list[str]],n_clusters=700, min_
             vectors = [model.wv[word] for word in filtered_words]
             doc_vector = np.mean(vectors, axis=0)
         else:
-            # Если все слова отфильтрованы (редко), используйте нулевой вектор или пропустите
             doc_vector = np.zeros(model.wv.vector_size)
 
         doc_vectors.append(doc_vector)
 
     return doc_vectors
+
