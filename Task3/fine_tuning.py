@@ -1,6 +1,4 @@
 import json
-from typing import Iterator
-
 from datasets import Dataset
 from peft import LoraConfig, TaskType, get_peft_model
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM, Seq2SeqTrainer, Seq2SeqTrainingArguments, T5Tokenizer
