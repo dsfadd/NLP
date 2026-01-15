@@ -1,4 +1,4 @@
-from transformers import T5ForConditionalGeneration, T5Tokenizer, GenerationConfig
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
 def paraphrase(
@@ -28,8 +28,8 @@ def paraphrase(
     return res
 
 device="cuda"
-model = T5ForConditionalGeneration.from_pretrained("./fine_tuned_paraphraser").to(device)
-tokenizer = T5Tokenizer.from_pretrained("./fine_tuned_paraphraser")
+tokenizer = AutoTokenizer.from_pretrained("./fine_tuned_paraphraser")
+model = AutoModelForSeq2SeqLM.from_pretrained("./fine_tuned_paraphraser").to(device)
 
 sentence = "Практика повышает уверенность в навыках."
 
